@@ -187,6 +187,7 @@ def get_row_echelon_matrix(ref, it=0):
 
 	returns the row echelon form (REF) of a matrix
 	"""
+	ref = copy.deepcopy(ref)
 
 	# pivot
 	pivot = 0
@@ -232,7 +233,7 @@ def rank(A):
 
 	returns number of linearly independent column vectors
 	"""
-	ref = get_row_echelon_matrix(A[:])
+	ref = get_row_echelon_matrix(A)
 	m,n = len(A), len(A[0])
 	z = zeroes(1, n)[0]
 	
