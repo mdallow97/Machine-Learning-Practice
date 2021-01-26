@@ -272,6 +272,7 @@ def fitLine(X, y, theta, title, step=0.01):
 	test = np.array(np.arange(min(X[:,1]), max(X[:,1]), step)).reshape((-1, 1))
 	test = np.concatenate([np.ones((test.shape[0],  test.shape[1])), test], axis=1)
 
+	# Don't plot the intercept columns
 	plt.plot(X[:,1], y, 'ro', ms=10, mec='k')
 	plt.plot(test[:,1], predict(test, theta), 'b', ms=3, mec='k')
 	plt.title(title)
